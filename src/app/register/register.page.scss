@@ -1,0 +1,38 @@
+.custom-title {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px 0px;
+    background-color: #ac0909;
+    color: aliceblue;
+  }
+  
+  .login-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      --background: #f68484;
+  }
+  
+  .input-item {
+    margin-bottom: 20px;
+  }
+  
+  ion-input {
+    margin-top: 20px;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  
+  .btn-login {
+    margin-top: 60px;
+  }
+  
+  .msg-err {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    position: absolute;
+  }

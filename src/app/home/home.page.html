@@ -1,20 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Alarma de Robo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    @if (alarmaActiva) {
+      <button class="btn-alarma" (click)="activarAlarma()">
+        <img src="assets/alarma.png" alt="">
+      </button>
+    }
+    @else {
+      <button class="btn-alarma" (click)="activarAlarma()">
+        <img src="assets/alarma_apagada.png" alt="">
+      </button>
+    }
+
+    <ion-modal [isOpen]="showModal" backdropDismiss="false">
+      <ng-template>
+        <div class="custom-modal">
+          <ion-input type="password" label="Contraseña" label-placement="floating" fill="solid" placeholder="Ingrese su contraseña..." [(ngModel)]="pass"></ion-input>
+    
+
+          <ion-button color="danger" size="large" expand="block" class="btn-modal" (click)="verificarPass()">Desactivar</ion-button>
+          <ion-button color="danger" size="large" expand="block" fill="outline" class="btn-modal" (click)="closeModal()">Cancelar</ion-button>
+        </div>
+      </ng-template>
+    </ion-modal>
+    
+    <ion-button color="danger" size="large" expand="block" fill="outline" class="btn-cerrar" (click)="cerrarSesion()">Cerrar sesion</ion-button>
   </div>
 </ion-content>

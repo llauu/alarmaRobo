@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center custom-title">
+      <strong>Registro</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding login-page">
+  <form (ngSubmit)="onSubmit()">
+    <ion-input label="Correo electrónico" label-placement="floating" fill="solid" placeholder="Ingrese su correo electrónico..." [formControl]="registerForm.controls.email"></ion-input>
+    <ion-input label="Contraseña" type="password" label-placement="floating" fill="solid" placeholder="Ingrese su contraseña..." [formControl]="registerForm.controls.pass"></ion-input>
+    <ion-input label="Confirmar contraseña" type="password" label-placement="floating" fill="solid" placeholder="Ingrese su contraseña..." [formControl]="registerForm.controls.repeatPass"></ion-input>
+    <p class="msg-err">{{errorMsg}}</p>
+
+    <ion-button size="large" color="danger" expand="block" type="submit" class="btn-login" [disabled]="!registerForm.valid">Registrarse</ion-button>
+    <ion-button size="large" color="danger" expand="block" fill="outline" routerLink="../login">Volver</ion-button>
+  </form>
+</ion-content>

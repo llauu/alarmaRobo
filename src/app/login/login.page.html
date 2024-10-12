@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center custom-title">
+      <strong>Inicio de sesión</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding login-page">
+  <form (ngSubmit)="onSubmit()">
+    <ion-input label="Correo electrónico" label-placement="floating" fill="solid" placeholder="Ingrese su correo electrónico..." [formControl]="loginForm.controls.email"></ion-input>
+    <ion-input label="Contraseña" type="password" label-placement="floating" fill="solid" placeholder="Ingrese su contraseña..." [formControl]="loginForm.controls.pass"></ion-input>
+    <p class="msg-err">{{errorMsg}}</p>
+
+    <ion-button size="large" expand="block" color="danger" type="submit" class="btn-login" [disabled]="!loginForm.valid">Iniciar Sesión</ion-button>
+    <ion-button size="large" expand="block" color="danger" fill="outline" (click)="onRegister()">Registrarse</ion-button>
+  </form>
+
+  <div class="footer">
+    <ion-title class="ion-text-center custom-subtitle">Accesos rápidos</ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="danger" size="large" expand="block" fill="outline" (click)="fillForm('invitado@invitado.com', '222222')">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="danger" size="large" expand="block" fill="outline" (click)="fillForm('usuario@usuario.com', '333333')">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="danger" size="large" expand="block" fill="outline" (click)="fillForm('anonimo@anonimo.com', '444444')">3</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

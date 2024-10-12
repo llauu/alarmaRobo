@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Alarma de Robo</string>
+    <string name="title_activity_main">Alarma de Robo</string>
+    <string name="package_name">io.ionic.alarmaRobo</string>
+    <string name="custom_url_scheme">io.ionic.alarmaRobo</string>
+</resources>
